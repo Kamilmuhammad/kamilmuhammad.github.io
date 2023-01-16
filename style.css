@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+* {
+    font-family: "Lato", sans-serif;
+}
+h1 {
+    font-weight: 600;
+}
+body {
+    background: rgb(252, 191, 73);
+    background: linear-gradient(
+        180deg,
+        rgba(234, 226, 183, 1) 0%,
+        rgba(252, 191, 73, 1) 60%,
+        rgba(247, 127, 0, 1) 100%
+    );
+}
+nav {
+    background-color: #002f49e0;
+    text-transform: uppercase;
+}
+.main-hero {
+    margin-top: 55px;
+    padding-top: 10px;
+}
+.hero-img {
+    width: 300px;
+    border-radius: 50px;
+    box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -webkit-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -moz-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+}
+.card-title {
+    font-size: 60px;
+}
+.card-link {
+    color: black;
+    font-size: 30px;
+}
+#about hr {
+    height: 5px;
+    border-radius: 10%;
+    margin-top: 10px;
+    color: black;
+    opacity: 0.8;
+}
+.skill div {
+    background-color: #d62828;
+    color: white;
+    margin: 5px 5px;
+    border-radius: 20px;
+    box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -webkit-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -moz-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+}
+.skill img {
+    width: 50%;
+    margin: 30px 0;
+}
+.card-project {
+    padding: 0;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: #002f49;
+    color: white;
+    box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -webkit-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+    -moz-box-shadow: -15px 28px 43px -10px rgba(69, 41, 4, 0.67);
+}
+.card-project img {
+    border-radius: 10px;
+    padding: 0;
+}
+form {
+    color: white;
+}
+
+.foot-link {
+    font-size: 20px;
+    margin: 10px 5px;
+    color: black;
+}
+@media (min-width: 576px) {
+}
