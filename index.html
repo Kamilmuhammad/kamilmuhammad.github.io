@@ -224,7 +224,7 @@
                     <button class="btn d-none btn-loading" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
-                      </button>
+                    </button>
                 </form>
                 <script>
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbw1-1r4eH-Gx9JpNSt416Q6mc6F72qNpYtkSlaeZJnSlZ0HlH5i4k5nONVklENPceZpNw/exec'
@@ -233,6 +233,9 @@
                     const alertDanger = document.querySelector('.alert-danger')
                     const btnLoading = document.querySelector('.btn-loading')
                     const btnKirim = document.querySelector('.btn-kirim')
+                    const nodeInput = document.querySelectorAll('.form-control')
+                    const input = [...nodeInput]
+                    console.log(input);
                     form.addEventListener('submit', e => {
                     e.preventDefault()
                     btnKirim.classList.toggle("d-none")
@@ -241,8 +244,13 @@
                         .then(response => {
                             btnKirim.classList.toggle("d-none")
                             btnLoading.classList.toggle("d-none")
-                            form.reset();
-                            alertSuccess.classList.remove("d-none")
+                            if ( input[0].value == "" || input[1].value == "" || input[2].value == "" ){
+                                alertDanger.classList.remove("d-none")
+                            } else {
+                                alertSuccess.classList.remove("d-none")
+                                alertDanger.classList.add("d-none")
+                                form.reset();
+                        }                            
                         })
                         .catch(error => {
                             alertDanger.classList.remove("d-none")
