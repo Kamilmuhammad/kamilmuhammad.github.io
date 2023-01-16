@@ -75,15 +75,16 @@
                     </div>
                     <div class="col-sm-8 indeks-sm-1">
                         <h5 class="card-title pt-5 pb-0">
-                            Hi! my name's, Kamil Muhammad.
+                            <span class="fs-1">Hi! my name's,</span><br> Kamil Muhammad.
                         </h5>
                         <h6 class="card-subtitle mb-4 text-muted">
                             Web Developer
                         </h6>
                         <p class="card-text pt-2 pb-2">I am a beginner web developer who wants to learn to develop web.</p>
                         <div>
+                            <span>Contact Me:</span>
                             <a href="https://api.whatsapp.com/send/?phone=0877216157974&text&type=phone_number&app_absent=0" class="card-link"
-                                ><i class="bi bi-whatsapp"></i
+                                ><i class="ms-3 bi bi-whatsapp"></i
                             ></a>
                             <a href="https://www.instagram.com/kamilmuhammad12/" class="card-link">
                                 <i class="bi bi-instagram"></i
@@ -196,27 +197,67 @@
             <hr>
             <!-- Contact -->
             <section id="contact" class=" w-50 m-auto">
-                <form class="m-auto mt-5">
+                <h1 class="text-center mb-5">Contact</h1>
+                <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                    <strong>Terimakasih!</strong> your message has been sent successfully.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <div class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+                    <strong>Warning!</strong> your message has not been sent successfully.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <form class="m-auto" name="contact-form">
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="email" id="inputEmail1" aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text text-light fw-light">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" " class="form-label">Name</label>
+                    <input type="text" class="form-control" name="nama" id="inputName">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">message</label>
+                    <textarea type="text-area" class="form-control" name="pesan" id="inputMessage"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-kirim">Submit</button>
+                    <button class="btn d-none btn-loading" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                      </button>
                 </form>
+                <script>
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1-1r4eH-Gx9JpNSt416Q6mc6F72qNpYtkSlaeZJnSlZ0HlH5i4k5nONVklENPceZpNw/exec'
+                    const form = document.forms['contact-form']
+                    const alertSuccess = document.querySelector('.alert-success')
+                    const alertDanger = document.querySelector('.alert-danger')
+                    const btnLoading = document.querySelector('.btn-loading')
+                    const btnKirim = document.querySelector('.btn-kirim')
+                    form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    btnKirim.classList.toggle("d-none")
+                    btnLoading.classList.toggle("d-none")
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                        .then(response => {
+                            btnKirim.classList.toggle("d-none")
+                            btnLoading.classList.toggle("d-none")
+                            form.reset();
+                            alertSuccess.classList.remove("d-none")
+                        })
+                        .catch(error => {
+                            alertDanger.classList.remove("d-none")
+                        })
+                    })
+                </script>
             </section>
             <!-- Footer -->
             <footer">
             <hr>
-            <div class="row justify-content-between pt-3 m-0">
-                <div class="col-3">
+            <div class="row justify-content-between  text-center pt-3 m-0">
+                <div class="col-md-3 ">
                 <p>creat with <i class="bi bi-heart"></i> by Kamil Muhammad</p>
                 </div>
-                <div class="col-3">
+                <div class="col-md-3">
                         <a href="https://api.whatsapp.com/send/?phone=0877216157974&text&type=phone_number&app_absent=0" class="foot-link
                         "
                             ><i class="bi bi-whatsapp"></i

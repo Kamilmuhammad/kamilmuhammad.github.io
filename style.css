@@ -17,6 +17,7 @@ body {
 nav {
     background-color: #002f49e0;
     text-transform: uppercase;
+    box-shadow: 0px 1px 10px #002f49;
 }
 .main-hero {
     margin-top: 55px;
@@ -73,11 +74,22 @@ nav {
 form {
     color: white;
 }
-
 .foot-link {
     font-size: 20px;
     margin: 10px 5px;
     color: black;
+}
+textarea {
+    height: 85px;
+}
+.btn {
+    background-color: #002f49;
+    color: white;
+}
+.btn:hover {
+    background-color: #006196;
+    color: white;
+    box-shadow: 5px 5px 20px #aeaeae;
 }
 @media (min-width: 576px) {
 }
